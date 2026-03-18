@@ -57,7 +57,7 @@
 }
 
 
-/* INFO */
+/* Info */
 
 .info{
     display:flex;
@@ -78,8 +78,7 @@
     height:300px;
 }
 
-
-/* FOOTER */
+/* COMENTAR ESTE APARTADO */
 
 footer{
     background:#777;
@@ -98,8 +97,7 @@ footer{
     margin-top:20px;
 }
 
-
-/* RESPONSIVE */
+/* Responsive (media queries) */
 
 @media (max-width: 768px){
 
