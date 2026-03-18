@@ -5,11 +5,13 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.hero{
-    background-image:url("img/header.jpg");
-    background-size:cover;
-    background-position:center;
-    height:60vh;
+#header {
+    /* propiedad que  */
+    height: 100vh;
+    background-image: url('../images/header.jpg');
+    background-position: center;
+    background-size: cover;
+}
 
     display:flex;
     justify-content:center;
