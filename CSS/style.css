@@ -5,13 +5,13 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#header {
-    /* propiedad que  */
-    height: 100vh;
-    background-image: url('../images/header.jpg');
-    background-position: center;
-    background-size: cover;
-}
+
+
+.hero{
+    background-image:url("./images/header.jpg");
+    background-size:cover;
+    background-position:center;
+    height:100vh;
 
     display:flex;
     justify-content:center;
@@ -29,6 +29,7 @@
 
 
 /* PROJECTS */
+
 .projects{
     background:#eee;
     padding:40px;
@@ -59,7 +60,7 @@
 }
 
 
-/* Info */
+/* INFO */
 
 .info{
     display:flex;
@@ -80,7 +81,8 @@
     height:300px;
 }
 
-/* COMENTAR ESTE APARTADO */
+
+/* FOOTER */
 
 footer{
     background:#777;
@@ -99,7 +101,8 @@ footer{
     margin-top:20px;
 }
 
-/* Responsive (media queries) */
+
+/* RESPONSIVE */
 
 @media (max-width: 768px){
 
