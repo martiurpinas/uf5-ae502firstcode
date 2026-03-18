@@ -1,126 +1,397 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>First Code · Diseño y desarrollo web</title>
+    <style>
+        /* === CSS reordenado y completo, basado en la imagen === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
+        }
 
+        body {
+            background-color: #f2eee9;
+            display: flex;
+            justify-content: center;
+            padding: 30px 20px;
+        }
 
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid #e2d9cd;
+            padding: 2.5rem 2.5rem;
+        }
 
-.hero{
-    background-image:url("./images/header.jpg");
-    background-size:cover;
-    background-position:center;
-    height:100vh;
+        /* HEADER (First Code + diseño y desarrollo) */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-bottom: 2px dashed #c9bfb0;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-}
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            color: #1f3a4b;
+            letter-spacing: -1px;
+            line-height: 1;
+        }
 
-.hero h1{
-    font-size:50px;
-}
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #5d6f7e;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-top: 8px;
+        }
 
-.hero p{
-    font-size:20px;
-}
+        .hero-decor {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
 
+        .decor-circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #eddbb5;
+            border: 2px solid #bbaa8a;
+        }
 
-/* PROJECTS */
+        .decor-line {
+            width: 70px;
+            height: 4px;
+            background: repeating-linear-gradient(90deg, #9e9483 0px, #9e9483 6px, transparent 6px, transparent 12px);
+        }
 
-.projects{
-    background:#eee;
-    padding:40px;
-    text-align:center;
-}
+        .decor-dots {
+            font-size: 2.4rem;
+            color: #8f8472;
+            line-height: 1;
+            transform: translateY(-5px);
+        }
 
-.projects-container{
-    margin-top:30px;
+        /* PROYECTOS: ahora sí, grid de 6 imágenes (github.png) como tú lo tenías, pero ordenado */
+        .projects {
+            margin-bottom: 2.5rem;
+        }
 
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:40px;
-}
+        .projects h2 {
+            font-size: 1.2rem;
+            letter-spacing: 2.5px;
+            color: #8f897c;
+            font-weight: 500;
+            border-bottom: 1px solid #d6cdbf;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
 
-.project img{
-    width:150px;
-}
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+        }
 
+        .project {
+            background: #f3ede3;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.2rem;
+            border: 1px solid #dfd3c2;
+        }
 
-/* FEEDBACK */
+        .project img {
+            max-width: 70px;
+            height: auto;
+            opacity: 0.8;
+        }
 
-.feedback{
-    background:#4f9a9a;
-    color:white;
-    text-align:center;
-    padding:30px;
-}
+        /* FEEDBACK (exacto como en la imagen: con fondo de folder) */
+        .feedback {
+            background-color: #fcf6ed;
+            border: 1px solid #e2d6c6;
+            border-radius: 60px;
+            padding: 1.2rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.8rem;
+            margin: 2.5rem 0 2.8rem 0;
+            flex-wrap: wrap;
+        }
 
+        .feedback-icon {
+            width: 70px;
+            height: 56px;
+            background: #f0b347;
+            clip-path: path("M8 0 C4 0 0 4 0 8 L0 48 C0 52 4 56 8 56 L62 56 C66 56 70 52 70 48 L70 16 C70 12 66 8 62 8 L35 8 L27 0 8 0Z");
+            display: inline-block;
+        }
 
-/* INFO */
+        .feedback h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2b3f4e;
+            letter-spacing: -0.2px;
+        }
 
-.info{
-    display:flex;
-    padding:40px;
-    gap:40px;
-}
+        .feedback p {
+            font-size: 1.1rem;
+            color: #435e6f;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="%23b4aa99"><circle cx="12" cy="12" r="4"/></svg>') repeat-x left bottom;
+            padding-bottom: 8px;
+        }
 
-.about{
-    flex:1;
-}
+        /* INFO: dos columnas: SOBRE EL PROYECTO + PREGUNTAS a la izquierda / MAPA a la derecha */
+        .info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0 2rem 0;
+        }
 
-.map{
-    flex:1;
-}
+        .about h2 {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            color: #807a6b;
+            letter-spacing: 1.8px;
+            border-left: 6px solid #f0c45a;
+            padding-left: 1rem;
+            margin: 1.8rem 0 1rem 0;
+        }
 
-.map iframe{
-    width:100%;
-    height:300px;
-}
+        .about h2:first-of-type {
+            margin-top: 0;
+        }
 
+        .about p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #2a3e4f;
+            margin-bottom: 1rem;
+        }
 
-/* FOOTER */
+        .about p b {
+            font-weight: 600;
+            color: #1d2c38;
+        }
 
-footer{
-    background:#777;
-    color:white;
-    padding:30px;
-}
+        .about ul {
+            list-style: none;
+            margin-top: 0.5rem;
+        }
 
-.footer-links{
-    display:flex;
-    justify-content:space-between;
-    margin-top:20px;
-}
+        .about ul li {
+            padding: 0.5rem 0 0.5rem 1.8rem;
+            border-bottom: 1px dotted #cfc1b0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="%23998d7c"><circle cx="12" cy="12" r="4"/></svg>') left center no-repeat;
+            background-size: 16px;
+        }
 
-.year{
-    text-align:center;
-    margin-top:20px;
-}
+        /* MAPA */
+        .map iframe {
+            width: 100%;
+            height: 280px;
+            border: 3px solid #dcd2c4;
+            border-radius: 24px 24px 8px 8px;
+            box-shadow: 0 5px 0 #c0b5a4;
+            margin-top: 1.5rem;
+        }
 
+        /* FOOTER con soporte, diseñador, año y frase */
+        footer {
+            border-top: 2px dashed #d0c2b2;
+            margin-top: 2.8rem;
+            padding-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-/* RESPONSIVE */
+        .footer-slogan {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #6b5843;
+            background: #f7ede0;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+        }
 
-@media (max-width: 768px){
+        .footer-links {
+            display: flex;
+            gap: 3rem;
+        }
 
-    .projects-container{
-        gap:20px;
-    }
+        .footer-links div h4 {
+            font-size: 1.1rem;
+            color: #3e4f5d;
+            border-left: 4px solid #b5aa97;
+            padding-left: 0.6rem;
+            margin-bottom: 0.8rem;
+        }
 
-    .project img{
-        width:120px;
-    }
+        .footer-links div p {
+            color: #2f5885;
+            margin: 0.3rem 0;
+            font-size: 0.95rem;
+            cursor: default;
+        }
 
-    .info{
-        flex-direction:column;
-    }
+        .footer-links div p:hover {
+            text-decoration: underline;
+        }
 
-    .footer-links{
-        flex-direction:column;
-        gap:20px;
-    }
+        .year {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #b7a98b;
+            border: 2px solid #dad1c2;
+            padding: 0.3rem 1.2rem;
+            border-radius: 60px;
+            background: white;
+        }
 
-}
+        /* pequeños retoques responsivos para que nada se desordene */
+        @media (max-width: 800px) {
+            .info { grid-template-columns: 1fr; }
+            .projects-container { grid-template-columns: repeat(2,1fr); }
+            footer { flex-direction: column; gap: 1.5rem; align-items: flex-start; }
+        }
+        @media (max-width: 500px) {
+            .projects-container { grid-template-columns: 1fr; }
+            .hero { flex-direction: column; align-items: start; gap: 10px; }
+        }
+
+        /* arreglamos el detalle del folder con SVG (para que sea exacto) */
+        .feedback-icon {
+            background: #f5b342;
+            width: 70px;
+            height: 56px;
+            clip-path: path("M8,0 C4,0 0,4 0,8 L0,48 C0,52 4,56 8,56 L62,56 C66,56 70,52 70,48 L70,16 C70,12 66,8 62,8 L35,8 L27,0 L8,0 Z");
+            display: inline-block;
+            flex-shrink: 0;
+        }
+        /* añadimos un pequeño texto decorativo como en la imagen: ':' */
+        .hero-decor .decor-dots {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #9a8e7a;
+        }
+        /* sobre el proyecto con bullet (lo incluimos en about) */
+        .about h2::before {
+            content: "◆";
+            color: #4285f4;
+            font-size: 1.2rem;
+            margin-right: 8px;
+        }
+        /* Preguntas frecuentes también llevan icono ? */
+        .about h2:last-of-type::before {
+            content: "?";
+            background: #ccc;
+            color: #333;
+            font-weight: bold;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: inline-block;
+            text-align: center;
+            line-height: 22px;
+            font-size: 1rem;
+            margin-right: 8px;
+        }
+        /* Ajuste del mapa para que se parezca al de la imagen (con un iframe de Barcelona) */
+        .map iframe {
+            pointer-events: none; /* solo visual */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- HEADER: First Code con elementos decorativos -->
+    <header class="hero">
+        <div class="hero-text">
+            <h1>First Code</h1>
+            <p>Diseño y desarrollo web</p>
+        </div>
+        <div class="hero-decor">
+            <span class="decor-circle"></span>
+            <span class="decor-line"></span>
+            <span class="decor-dots">:</span>
+        </div>
+    </header>
+
+    <!-- PROYECTOS (grid con seis imágenes idénticas como en tu código, pero sin desorden) -->
+    <section class="projects">
+        <h2>PROYECTOS</h2>
+        <div class="projects-container">
+            <div class="project"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 24 24' fill='%23333'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12c0 4.41 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33s1.7.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48C19.14 20.16 22 16.41 22 12c0-5.52-4.48-10-10-10z' fill='%23181716'/%3E%3C/svg%3E" alt="github"></div>
+            <div class="project"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 24 24' fill='%23333'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12c0 4.41 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33s1.7.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48C19.14 20.16 22 16.41 22 12c0-5.52-4.48-10-10-10z' fill='%23181716'/%3E%3C/svg%3E" alt="github"></div>
+            <div class="project"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 24 24' fill='%23333'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12c0 4.41 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33s1.7.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48C19.14 20.16 22 16.41 22 12c0-5.52-4.48-10-10-10z' fill='%23181716'/%3E%3C/svg%3E" alt="github"></div>
+            <div class="project"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 24 24' fill='%23333'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12c0 4.41 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33s1.7.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48C19.14 20.16 22 16.41 22 12c0-5.52-4.48-10-10-10z' fill='%23181716'/%3E%3C/svg%3E" alt="github"></div>
+            <div class="project"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 24 24' fill='%23333'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12c0 4.41 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33s1.7.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48C19.14 20.16 22 16.41 22 12c0-5.52-4.48-10-10-10z' fill='%23181716'/%3E%3C/svg%3E" alt="github"></div>
+            <div class="project"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 24 24' fill='%23333'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12c0 4.41 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02.8-.22 1.65-.33 2.5-.33s1.7.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48C19.14 20.16 22 16.41 22 12c0-5.52-4.48-10-10-10z' fill='%23181716'/%3E%3C/svg%3E" alt="github"></div>
+        </div>
+    </section>
+
+    <!-- FEEDBACK con estilo de folder y textos exactos -->
+    <section class="feedback">
+        <span class="feedback-icon" aria-hidden="true"></span>
+        <h2>¡DANOS TU FEEDBACK!</h2>
+        <p>Es muy importante para nosotros recibir tus críticas y sugerencias</p>
+    </section>
+
+    <!-- INFO: dos columnas: Sobre proyecto + preguntas / MAPA -->
+    <section class="info">
+        <div class="about">
+            <h2>Sobre el proyecto</h2>
+            <p><b>¡La innovación del mañana viene del aprendizaje de ahora!</b></p>
+            <p>Bienvenido al repositorio de proyectos web. Aquí podrás encontrar, de manera centralizada, los distintos trabajos desarrollados a lo largo del curso 2020-2021.</p>
+            <h2>Preguntas frecuentes</h2>
+            <ul>
+                <li>¿Qué es HTML?</li>
+                <li>¿Qué es CSS?</li>
+                <li>¿Qué es Git?</li>
+                <li>¿Qué es GitHub?</li>
+            </ul>
+        </div>
+        <div class="map">
+            <iframe src="https://maps.google.com/maps?q=barcelona&t=&z=13&ie=UTF8&iwloc=&output=embed" title="mapa barcelona"></iframe>
+        </div>
+    </section>
+
+    <!-- FOOTER completo: soporte, diseñador, año y frase -->
+    <footer>
+        <div class="footer-slogan">¡Hecho en Barcelona con corazón y mucho café!</div>
+        <div class="footer-links">
+            <div>
+                <h4>Soporte</h4>
+                <p>Repositorio de GitHub</p>
+                <p>Reportar un error</p>
+            </div>
+            <div>
+                <h4>Diseñador</h4>
+                <p>Twitter</p>
+                <p>Instagram</p>
+            </div>
+        </div>
+        <div class="year">2021 - 2022</div>
+    </footer>
+</div>
+<!-- El diseño ahora respeta la imagen: proyectos ordenados, feedback con folder, info en dos columnas y footer alineado -->
+</body>
+</html>
