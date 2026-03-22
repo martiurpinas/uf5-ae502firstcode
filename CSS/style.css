@@ -1,313 +1,266 @@
-* {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
-        }
+.container {
+    max-width: 1100px;
+    width: 100%;
+    background: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2d9cd;
+    padding: 2.5rem 2.5rem;
+}
 
-        body {
-            background-color: #f2eee9;
-            display: flex;
-            justify-content: center;
-            padding: 30px 20px;
-        }
+/* header */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: black;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    background-image: url(../images/header.jpg);
+    background-size: cover;
+    background-position: center;
+}
 
-        .container {
-            max-width: 1100px;
-            width: 100%;
-            background: white;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            border: 1px solid #e2d9cd;
-            padding: 2.5rem 2.5rem;
-        }
+.hero-text h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: black;
+    letter-spacing: -1px;
+    line-height: 1;
+    text-align: center;
+}
 
-        /* header */
-        .hero {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            border-bottom: 2px dashed #c9bfb0;
-            padding-bottom: 1.5rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
+.hero-text p {
+    font-size: 1.1rem;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 8px;
+    text-align: center
+}
 
-        .hero-text h1 {
-            font-size: 3rem;
-            font-weight: 600;
-            color: #1f3a4b;
-            letter-spacing: -1px;
-            line-height: 1;
-        }
+/* PROYECTOS: ahora sí, grid de 6 imágenes (github.png) como tú lo tenías, pero ordenado */
+.projects h2 {
+    font-size: 1.2rem;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
 
-        .hero-text p {
-            font-size: 1.1rem;
-            color: #5d6f7e;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-top: 8px;
-        }
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+}
 
-        .hero-decor {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 8px;
-        }
+.project {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem;
+}
 
-        .decor-circle {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background: #eddbb5;
-            border: 2px solid #bbaa8a;
-        }
+.project img {
+    max-width: 70px;
+    height: auto;
+    opacity: 0.8;
+}
 
-        .decor-line {
-            width: 70px;
-            height: 4px;
-            background: repeating-linear-gradient(90deg, #9e9483 0px, #9e9483 6px, transparent 6px, transparent 12px);
-        }
+/* ajustes del feedback */
+.feedback {
+    background-color: aquamarine;
+    border: 1px solid #e2d6c6;
+    color: black;
+    padding: 1.2rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+    margin: 2.5rem 0 2.8rem 0;
+    flex-wrap: wrap;
+}
 
-        .decor-dots {
-            font-size: 2.4rem;
-            color: #8f8472;
-            line-height: 1;
-            transform: translateY(-5px);
-        }
+/* INFO: dos columnas: SOBRE EL PROYECTO + PREGUNTAS a la izquierda / MAPA a la derecha */
+.info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0 2rem 0;
+}
 
-        /* PROYECTOS: ahora sí, grid de 6 imágenes (github.png) como tú lo tenías, pero ordenado */
-        .projects {
-            margin-bottom: 2.5rem;
-        }
+.about h2 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #807a6b;
+    letter-spacing: 1.8px;
+    border-left: 6px solid #f0c45a;
+    padding-left: 1rem;
+    margin: 1.8rem 0 1rem 0;
+}
 
-        .projects h2 {
-            font-size: 1.2rem;
-            letter-spacing: 2.5px;
-            color: #8f897c;
-            font-weight: 500;
-            border-bottom: 1px solid #d6cdbf;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-        }
+.about h2:first-of-type {
+    margin-top: 0;
+}
 
-        .projects-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.2rem;
-        }
+.about p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #2a3e4f;
+    margin-bottom: 1rem;
+}
 
-        .project {
-            background: #f3ede3;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1.2rem;
-            border: 1px solid #dfd3c2;
-        }
+.about p b {
+    font-weight: 600;
+    color: #1d2c38;
+}
 
-        .project img {
-            max-width: 70px;
-            height: auto;
-            opacity: 0.8;
-        }
+.about ul {
+    list-style: none;
+    margin-top: 0.5rem;
+}
 
-        /* FEEDBACK (exacto como en la imagen: con fondo de folder) */
-        .feedback {
-            background-color: #fcf6ed;
-            border: 1px solid #e2d6c6;
-            border-radius: 60px;
-            padding: 1.2rem 2rem;
-            display: flex;
-            align-items: center;
-            gap: 1.8rem;
-            margin: 2.5rem 0 2.8rem 0;
-            flex-wrap: wrap;
-        }
+.about ul li {
+    padding: 0.5rem 0 0.5rem 1.8rem;
+    border-bottom: 1px dotted #cfc1b0;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="%23998d7c"><circle cx="12" cy="12" r="4"/></svg>') left center no-repeat;
+    background-size: 16px;
+}
 
-        .feedback-icon {
-            width: 70px;
-            height: 56px;
-            background: #f0b347;
-            clip-path: path("M8 0 C4 0 0 4 0 8 L0 48 C0 52 4 56 8 56 L62 56 C66 56 70 52 70 48 L70 16 C70 12 66 8 62 8 L35 8 L27 0 8 0Z");
-            display: inline-block;
-        }
+/* MAPA */
+.map iframe {
+    width: 100%;
+    height: 280px;
+    border: 3px solid #dcd2c4;
+    border-radius: 24px 24px 8px 8px;
+    box-shadow: 0 5px 0 #c0b5a4;
+    margin-top: 1.5rem;
+}
 
-        .feedback h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #2b3f4e;
-            letter-spacing: -0.2px;
-        }
+/* FOOTER con soporte, diseñador, año y frase */
+footer {
+    border-top: 2px dashed #d0c2b2;
+    margin-top: 2.8rem;
+    padding-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .feedback p {
-            font-size: 1.1rem;
-            color: #435e6f;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="%23b4aa99"><circle cx="12" cy="12" r="4"/></svg>') repeat-x left bottom;
-            padding-bottom: 8px;
-        }
+.footer-slogan {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #6b5843;
+    background: #f7ede0;
+    padding: 0.4rem 1.2rem;
+    border-radius: 40px;
+}
 
-        /* INFO: dos columnas: SOBRE EL PROYECTO + PREGUNTAS a la izquierda / MAPA a la derecha */
-        .info {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin: 2rem 0 2rem 0;
-        }
+.footer-links {
+    display: flex;
+    gap: 3rem;
+}
 
-        .about h2 {
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            color: #807a6b;
-            letter-spacing: 1.8px;
-            border-left: 6px solid #f0c45a;
-            padding-left: 1rem;
-            margin: 1.8rem 0 1rem 0;
-        }
+.footer-links div h4 {
+    font-size: 1.1rem;
+    color: #3e4f5d;
+    border-left: 4px solid #b5aa97;
+    padding-left: 0.6rem;
+    margin-bottom: 0.8rem;
+}
 
-        .about h2:first-of-type {
-            margin-top: 0;
-        }
+.footer-links div p {
+    color: #2f5885;
+    margin: 0.3rem 0;
+    font-size: 0.95rem;
+    cursor: default;
+}
 
-        .about p {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #2a3e4f;
-            margin-bottom: 1rem;
-        }
+.footer-links div p:hover {
+    text-decoration: underline;
+}
 
-        .about p b {
-            font-weight: 600;
-            color: #1d2c38;
-        }
+.year {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #b7a98b;
+    border: 2px solid #dad1c2;
+    padding: 0.3rem 1.2rem;
+    border-radius: 60px;
+    background: white;
+}
 
-        .about ul {
-            list-style: none;
-            margin-top: 0.5rem;
-        }
+/* pequeños retoques responsivos para que nada se desordene */
+@media (max-width: 800px) {
+    .info {
+        grid-template-columns: 1fr;
+    }
 
-        .about ul li {
-            padding: 0.5rem 0 0.5rem 1.8rem;
-            border-bottom: 1px dotted #cfc1b0;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="%23998d7c"><circle cx="12" cy="12" r="4"/></svg>') left center no-repeat;
-            background-size: 16px;
-        }
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-        /* MAPA */
-        .map iframe {
-            width: 100%;
-            height: 280px;
-            border: 3px solid #dcd2c4;
-            border-radius: 24px 24px 8px 8px;
-            box-shadow: 0 5px 0 #c0b5a4;
-            margin-top: 1.5rem;
-        }
+    footer {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+}
 
-        /* FOOTER con soporte, diseñador, año y frase */
-        footer {
-            border-top: 2px dashed #d0c2b2;
-            margin-top: 2.8rem;
-            padding-top: 2rem;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-        }
+@media (max-width: 500px) {
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
 
-        .footer-slogan {
-            font-size: 1.2rem;
-            font-style: italic;
-            color: #6b5843;
-            background: #f7ede0;
-            padding: 0.4rem 1.2rem;
-            border-radius: 40px;
-        }
+    .hero {
+        flex-direction: column;
+        align-items: start;
+        gap: 10px;
+    }
+}
 
-        .footer-links {
-            display: flex;
-            gap: 3rem;
-        }
+/* arreglamos el detalle del folder con SVG (para que sea exacto) */
+.feedback-icon {
+    background: #f5b342;
+    width: 70px;
+    height: 56px;
+    clip-path: path("M8,0 C4,0 0,4 0,8 L0,48 C0,52 4,56 8,56 L62,56 C66,56 70,52 70,48 L70,16 C70,12 66,8 62,8 L35,8 L27,0 L8,0 Z");
+    display: inline-block;
+    flex-shrink: 0;
+}
 
-        .footer-links div h4 {
-            font-size: 1.1rem;
-            color: #3e4f5d;
-            border-left: 4px solid #b5aa97;
-            padding-left: 0.6rem;
-            margin-bottom: 0.8rem;
-        }
+/* añadimos un pequeño texto decorativo como en la imagen: ':' */
+.hero-decor .decor-dots {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #9a8e7a;
+}
 
-        .footer-links div p {
-            color: #2f5885;
-            margin: 0.3rem 0;
-            font-size: 0.95rem;
-            cursor: default;
-        }
+/* sobre el proyecto con bullet (lo incluimos en about) */
+.about h2::before {
+    content: "◆";
+    color: #4285f4;
+    font-size: 1.2rem;
+    margin-right: 8px;
+}
 
-        .footer-links div p:hover {
-            text-decoration: underline;
-        }
+/* Preguntas frecuentes también llevan icono ? */
+.about h2:last-of-type::before {
+    content: "?";
+    background: #ccc;
+    color: #333;
+    font-weight: bold;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    line-height: 22px;
+    font-size: 1rem;
+    margin-right: 8px;
+}
 
-        .year {
-            font-size: 1.5rem;
-            font-weight: 300;
-            color: #b7a98b;
-            border: 2px solid #dad1c2;
-            padding: 0.3rem 1.2rem;
-            border-radius: 60px;
-            background: white;
-        }
-
-        /* pequeños retoques responsivos para que nada se desordene */
-        @media (max-width: 800px) {
-            .info { grid-template-columns: 1fr; }
-            .projects-container { grid-template-columns: repeat(2,1fr); }
-            footer { flex-direction: column; gap: 1.5rem; align-items: flex-start; }
-        }
-        @media (max-width: 500px) {
-            .projects-container { grid-template-columns: 1fr; }
-            .hero { flex-direction: column; align-items: start; gap: 10px; }
-        }
-
-        /* arreglamos el detalle del folder con SVG (para que sea exacto) */
-        .feedback-icon {
-            background: #f5b342;
-            width: 70px;
-            height: 56px;
-            clip-path: path("M8,0 C4,0 0,4 0,8 L0,48 C0,52 4,56 8,56 L62,56 C66,56 70,52 70,48 L70,16 C70,12 66,8 62,8 L35,8 L27,0 L8,0 Z");
-            display: inline-block;
-            flex-shrink: 0;
-        }
-        /* añadimos un pequeño texto decorativo como en la imagen: ':' */
-        .hero-decor .decor-dots {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #9a8e7a;
-        }
-        /* sobre el proyecto con bullet (lo incluimos en about) */
-        .about h2::before {
-            content: "◆";
-            color: #4285f4;
-            font-size: 1.2rem;
-            margin-right: 8px;
-        }
-        /* Preguntas frecuentes también llevan icono ? */
-        .about h2:last-of-type::before {
-            content: "?";
-            background: #ccc;
-            color: #333;
-            font-weight: bold;
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            display: inline-block;
-            text-align: center;
-            line-height: 22px;
-            font-size: 1rem;
-            margin-right: 8px;
-        }
-        /* Ajuste del mapa para que se parezca al de la imagen (con un iframe de Barcelona) */
-        .map iframe {
-            pointer-events: none; /* solo visual */
-        }
+/* Ajuste del mapa para que se parezca al de la imagen (con un iframe de Barcelona) */
+.map iframe {
+    pointer-events: none;
+    /* solo visual */
+}
