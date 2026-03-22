@@ -79,7 +79,7 @@
     flex-wrap: wrap;
 }
 
-/* INFO: dos columnas: SOBRE EL PROYECTO + PREGUNTAS a la izquierda / MAPA a la derecha */
+/*  */
 .info {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -90,7 +90,7 @@
 .about h2 {
     font-size: 1.2rem;
     text-transform: uppercase;
-    color: #807a6b;
+    color: black;
     letter-spacing: 1.8px;
     border-left: 6px solid #f0c45a;
     padding-left: 1rem;
@@ -135,7 +135,7 @@
     margin-top: 1.5rem;
 }
 
-/* FOOTER con soporte, diseñador, año y frase */
+/* Ajustes para cambiar el footer */
 footer {
     border-top: 2px dashed #d0c2b2;
     margin-top: 2.8rem;
@@ -169,7 +169,6 @@ footer {
 }
 
 .footer-links div p {
-    color: #2f5885;
     margin: 0.3rem 0;
     font-size: 0.95rem;
     cursor: default;
@@ -189,7 +188,7 @@ footer {
     background: white;
 }
 
-/* pequeños retoques responsivos para que nada se desordene */
+/* Media Queries */
 @media (max-width: 800px) {
     .info {
         grid-template-columns: 1fr;
@@ -218,9 +217,8 @@ footer {
     }
 }
 
-/* arreglamos el detalle del folder con SVG (para que sea exacto) */
+/* Ajustes para el icono de feedback */
 .feedback-icon {
-    background: #f5b342;
     width: 70px;
     height: 56px;
     clip-path: path("M8,0 C4,0 0,4 0,8 L0,48 C0,52 4,56 8,56 L62,56 C66,56 70,52 70,48 L70,16 C70,12 66,8 62,8 L35,8 L27,0 L8,0 Z");
@@ -235,17 +233,13 @@ footer {
     color: #9a8e7a;
 }
 
-/* sobre el proyecto con bullet (lo incluimos en about) */
 .about h2::before {
-    content: "◆";
-    color: #4285f4;
     font-size: 1.2rem;
     margin-right: 8px;
 }
 
-/* Preguntas frecuentes también llevan icono ? */
+/* Apartado de preguntas frecuentes */
 .about h2:last-of-type::before {
-    content: "?";
     background: #ccc;
     color: #333;
     font-weight: bold;
@@ -259,8 +253,7 @@ footer {
     margin-right: 8px;
 }
 
-/* Ajuste del mapa para que se parezca al de la imagen (con un iframe de Barcelona) */
+/* Ajustes del mapa */
 .map iframe {
     pointer-events: none;
-    /* solo visual */
 }
