@@ -255,5 +255,5 @@ footer {
 
 /* Ajustes del mapa */
 .map iframe {
-    pointer-events: none;
+    pointer-events: all;
 }
