@@ -186,7 +186,11 @@ footer {
     text-decoration: underline;
 }
 
+/* Ajustes para el año */
 .year {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
     font-size: 1.5rem;
     font-weight: 300;
     color: #000000;
